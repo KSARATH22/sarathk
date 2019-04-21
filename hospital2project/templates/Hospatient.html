@@ -1,0 +1,144 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>Patient Page</title>
+
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+
+    header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../img/b.jpg");
+    background-size: cover;
+    background-repeat:no-repeat;
+    height:100vh;
+}
+ul{
+    float: right;
+    list-style-type: none;
+}
+
+ul li{
+    display: inline-block;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid white;
+    color: white;
+
+}
+ul li a:hover{
+    background-color: white;
+    color: black;
+}
+
+
+.container{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+h3{
+    color: white;
+}
+#hid{
+        font-size: 40px;
+        color: blue;
+        background-color: red;
+        border: 2px solid green;
+        color: black;
+        border-radius: 40px;
+    }
+  nav{
+        float: right;
+        font-size: 30px;
+    }
+    a{
+        margin-right: -1%;
+        text-decoration: none;
+        border: 2px red solid;
+        border-radius: 10px;
+        background-color: seagreen;
+        color: white;
+    }
+    a:hover{
+        background-color: blue;
+        color: white;
+        text-decoration: none;
+    }
+
+
+
+
+.pre1{
+    color: white;
+}
+label{
+    color: white;
+}
+
+h2{
+    color: white;
+}
+img{
+    width: 2000px;
+    height: 700px;
+}
+
+
+</style>
+<body>
+<header>
+    <div>
+        <ul>
+            <li> <a href="/home/">HOME</a></li>
+            <li> <a href="/doctors/">Doctors</a></li>
+            <li> <a href="#">Patients</a></li>
+            <li> <a href="/nurses/">Nurses</a></li>
+            <li> <a href="/reports/">Reports</a></li>
+            <li> <a href="/messages/">Messages</a></li>
+            <li> <a href="/contact/">Contact</a></li>
+            <li> <a href="/feedback/">FeedBack</a> </li>
+            <li> <a href="/gellery/">Gellery</a></li>
+
+        </ul>
+    </div>
+     <img src="{% static 'img/j.jpeg' %}" style="background-repeat: no-repeat; background-size: cover">
+
+
+     {% block child_block %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="POST">
+                <h1 id="hid">Enter Your Patient Details</h1>
+                {% csrf_token %}
+                {{ pform }}<br>
+                <center>
+                <input type="submit" value="Submit" class="btn btn-success">
+                            <input type="reset" value="Clear" class="btn btn-danger">
+                </center>
+
+
+            </form>
+
+
+        </div>
+
+
+
+    </div>
+</div>
+   </header>
+</body>
+</html>
+{% endblock %}

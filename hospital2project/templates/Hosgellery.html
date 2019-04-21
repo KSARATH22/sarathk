@@ -1,0 +1,149 @@
+{% load staticfiles %}
+
+<html>
+
+<head>
+    <title>Gallery Page</title>
+
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+
+
+
+    header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../img/g.jpg");
+    background-size: cover;
+    background-repeat:no-repeat;
+    height:100vh;
+}
+ul{
+    float: right;
+    list-style-type: none;
+}
+
+ul li{
+    display: inline-block;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid white;
+    color: white;
+
+}
+ul li a:hover{
+    background-color: white;
+    color: black;
+}
+
+#hid{
+        font-size: 70px;
+        color: white;
+        background-color: lawngreen;
+        border: 2px solid green;
+        color: white;
+        {#border-radius: 40px;#}
+    }
+  nav{
+        float: right;
+        font-size: 30px;
+    }
+    a{
+        margin-right: -1%;
+        text-decoration: none;
+        border: 2px red solid;
+        border-radius: 10px;
+        background-color: green;
+        color: white;
+    }
+    a:hover{
+        background-color: blue;
+        color: white;
+        text-decoration: none;
+    }
+
+
+
+.container{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+h3{
+    color: white;
+}
+
+
+.pre1{
+    color: white;
+}
+label{
+    color: white;
+}
+
+h1{
+    color: white;
+}
+
+
+</style>
+<header>
+    <div>
+        <ul>
+            <li> <a href="/home/">HOME</a></li>
+            <li> <a href="/doctors/">Doctors</a></li>
+            <li> <a href="/patients/">Patients</a></li>
+            <li> <a href="/nurses/">Nurses</a></li>
+            <li> <a href="/reports/">Reports</a></li>
+            <li> <a href="/messages/">Messages</a></li>
+            <li> <a href="/contact/">Contact</a></li>
+            <li> <a href="/feedback/">FeedBack</a> </li>
+            <li> <a href="#">Gellery</a></li>
+
+        </ul>
+    </div>
+
+
+    {% block child_block %}
+    <h1 class="text-center text-warning">HOSPITAL Gallery </h1>
+    <div class="container">
+        <div class="row">
+              <div class="col-md-6">
+                <img src="{% static 'img/b.jpg' %}" style="width: 300%; height: 90%;">
+              </div>
+              <div class="col-md-6">
+                    <img src="{% static 'img/c.jpg' %}" style="width: 200%; height: 90%;">
+              </div>
+        </div>
+        <div class="row">
+              <div class="col-md-6">
+                <img src="{% static 'img/d.jpg' %}" style="width: 300%; height: 90%;">
+              </div>
+              <div class="col-md-6">
+                    <img src="{% static 'img/e.jpg' %}" style="width: 200%; height: 90%;">
+              </div>
+        </div>
+        <div class="row">
+              <div class="col-md-6">
+                <img src="{% static 'img/k.jpeg' %}" style="width: 300%; height: 90%;">
+              </div>
+              <div class="col-md-6">
+                    <img src="{% static 'img/n.jpeg' %}" style="width: 200%; height: 90%;">
+              </div>
+        </div>
+
+
+</div><br>
+    </header>
+    </body>
+    </html>
+{% endblock %}

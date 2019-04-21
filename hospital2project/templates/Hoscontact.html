@@ -1,0 +1,159 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>Contact Page</title>
+
+
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+#hid{
+        font-size: 70px;
+        color: white;
+        background-color: lawngreen;
+        border: 2px solid green;
+        color: white;
+        border-radius: 40px;
+    }
+
+
+
+
+    header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../img/k.");
+    background-size: cover;
+    background-repeat:no-repeat;
+    height:100vh;
+}
+ul{
+    float: right;
+    list-style-type: none;
+}
+
+ul li{
+    display: inline-block;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid white;
+    color: white;
+
+}
+ul li a:hover{
+    background-color: red;
+    color: yellow;
+}
+
+
+.container{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+#hid{
+        font-size: 40px;
+        color: white;
+        background-color: lawngreen;
+        border: 2px solid green;
+        color: red;
+        border-radius: 40px;
+    }
+  nav{
+        float: right;
+        font-size: 30px;
+    }
+    a{
+        margin-right: -1%;
+        text-decoration: none;
+        border: 2px red solid;
+        border-radius: 10px;
+        background-color: gold;
+        color: white;
+    }
+    a:hover{
+        background-color: blue;
+        color: white;
+        text-decoration: none;
+    }
+
+
+
+
+h3{
+    color: white;
+}
+img{
+width: 100%;
+    height: 100%;
+
+.pre1{
+    color: white;
+}
+label{
+    color: white;
+}
+
+h2{
+    color: white;
+
+}
+
+</style>
+<body>
+
+    <header>
+    <div>
+        <ul>
+            <li> <a href="/home/">HOME</a></li>
+            <li> <a href="/doctors/">Doctors</a></li>
+            <li> <a href="/patients/">Patients</a></li>
+            <li> <a href="/nurses/">Nurses</a></li>
+            <li> <a href="/reports/">Reports</a></li>
+            <li> <a href="/messages/">Messages</a></li>
+            <li> <a href="#">Contact</a></li>
+            <li> <a href="/feedback/">FeedBack</a> </li>
+            <li> <a href="/gellery/">Gellery</a></li>
+        </ul>
+    </div>
+<img src="{% static 'img/k.jpeg' %}" style="background-repeat: no-repeat; background-size: cover">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+            <form method="POST">
+                <h2 id="hid">Please Enter Your Details</h2>
+                {% csrf_token %}
+               {{ cform }}<br>
+                <center>
+                <input type="submit" value="Submit" class="btn btn-success">
+                            <input type="reset" value="Clear" class="btn btn-danger">
+                </center>
+
+            </form>
+        </div>
+    </div>
+
+
+
+</header>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
